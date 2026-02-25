@@ -1,0 +1,6 @@
+python-telegram-bot==21.*
+PyMuPDF==1.24.*  # ya latest
+opencv-python-headless==4.*
+pillow
+numpy
+gunicorn  # webhook server ke liye (optional but recommended)
