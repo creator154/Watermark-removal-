@@ -97,8 +97,7 @@ def main() -> None:
         logger.error("TOKEN environment variable not set!")
         return
 
-    application = Application.builder().token(TOKEN) ho.build()
-
+    application = Application.builder().token(TOKEN).build()
     application.add_handler(CommandHandler("start", start))
     application.add_handler(MessageHandler(filters.Document.PDF, handle_pdf))
 
