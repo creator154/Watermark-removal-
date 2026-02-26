@@ -13,7 +13,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 # Config
-TOKEN = os.environ.get('TOKEN')  # Heroku config var se milega
+TOKEN = os.environ.get('BOT_TOKEN')  # Heroku config var se milega
 PORT = int(os.environ.get('PORT', '8443'))  # Heroku PORT env var
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -97,7 +97,7 @@ def main() -> None:
         logger.error("TOKEN environment variable not set!")
         return
 
-    application = Application.builder().token(BOT_TOKEN).build()
+    application = Application.builder().token(TOKEN) ho.build()
 
     application.add_handler(CommandHandler("start", start))
     application.add_handler(MessageHandler(filters.Document.PDF, handle_pdf))
